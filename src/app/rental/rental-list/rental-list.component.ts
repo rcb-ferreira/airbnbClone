@@ -4,8 +4,8 @@ import { Rental } from '../shared/rental.model';
 
 @Component({
   selector: 'bwm-rental-list',
-  templateUrl: './rental-list.component.html',
-  styleUrls: ['./rental-list.component.scss']
+	templateUrl: './rental-list.component.html',
+	styleUrls: ['./rental-list.component.scss']
 })
 export class RentalListComponent implements OnInit {
 
@@ -16,14 +16,11 @@ export class RentalListComponent implements OnInit {
   ngOnInit() {
     const rentalObservable = this.rentalService.getRentals();
 
-    rentalObservable.subscribe(
-      (rentals: Rental[]) => {
+    rentalObservable.subscribe((rentals: Rental[]) => {
         this.rentals = rentals;
-      },
-      (err) => {
-      },
-      () => {
-      });
+    },
+    (err) => {},
+    () => {});
   }
 
 }
