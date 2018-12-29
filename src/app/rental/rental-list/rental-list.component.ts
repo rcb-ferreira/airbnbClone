@@ -17,13 +17,13 @@ export class RentalListComponent implements OnInit {
     const rentalObservable = this.rentalService.getRentals();
 
     rentalObservable.subscribe(
-    	(rentals: Rental[]) => {
-    		this.rentals = rentals;
-    	},
-    	(err) => {
-    	},
-    	() => {
-    	});
+      (rentals: Rental[]) => {
+        this.rentals = rentals;
+      },
+      (err) => {
+      },
+      () => {
+      });
   }
 
 }

@@ -31,14 +31,14 @@ const routes: Routes = [
   { path: 'rentals',
     component: RentalComponent,
     children: [
-    	{ path: '', component: RentalListComponent },
+      { path: '', component: RentalListComponent },
       { path: 'new', component: RentalCreateComponent, canActivate: [AuthGuard] },
       { path: ':rentalId/edit', component: RentalUpdateComponent, canActivate: [AuthGuard, RentalGuard] },
-    	{ path: ':rentalId', component: RentalDetailComponent},
+      { path: ':rentalId', component: RentalDetailComponent},
       { path: ':city/homes', component: RentalSearchComponent}
     ]
   }
-]
+];
 
 @NgModule({
   declarations: [
@@ -53,8 +53,8 @@ const routes: Routes = [
     RentalUpdateComponent
   ],
   imports: [
-  	CommonModule,
-  	RouterModule.forChild(routes),
+    CommonModule,
+    RouterModule.forChild(routes),
     HttpClientModule,
     NgPipesModule,
     MapModule,
