@@ -16,7 +16,7 @@ import { UserModule } from './user/user.module';
 
 const routes: Routes = [
   {path: '', redirectTo: '/rentals', pathMatch: 'full'}
-]
+];
 
 @NgModule({
   declarations: [

@@ -16,10 +16,10 @@ const routes: Routes = [
   { path: 'users',
     component: UserComponent,
     children: [
-      { path: 'profile', canActivate: [AuthGuard], component: UserDetailComponent }
+      { path: 'profile', component: UserDetailComponent, canActivate: [AuthGuard] }
     ]
   }
-]
+];
 
 @NgModule({
   imports: [

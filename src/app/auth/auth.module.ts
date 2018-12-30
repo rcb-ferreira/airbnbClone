@@ -14,7 +14,7 @@ import { TokenInterceptor } from './shared/token.interceptor';
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard]}
-]
+];
 
 @NgModule({
   declarations: [

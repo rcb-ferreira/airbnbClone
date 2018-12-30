@@ -22,10 +22,7 @@ export class ManageRentalComponent implements OnInit {
     this.rentalService.getUserRentals().subscribe(
       (rentals: Rental[]) => {
         this.rentals = rentals;
-      },
-      () => {
-
-      })
+      }, () => {});
   }
 
 
@@ -37,7 +34,7 @@ export class ManageRentalComponent implements OnInit {
       },
       (errorResponse: HttpErrorResponse) => {
         this.toastr.error(errorResponse.error.errors[0].detail, 'Failed!');
-      })
+      });
   }
 
 }

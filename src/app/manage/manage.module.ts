@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: 'bookings', component: ManageBookingComponent, canActivate: [AuthGuard]}
     ]
   }
-]
+];
 
 @NgModule({
   declarations: [

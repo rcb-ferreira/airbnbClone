@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import * as moment from 'moment';
+import { Router } from '@angular/router';
 
 const jwt = new JwtHelperService();
 
@@ -16,7 +17,7 @@ class DecodedToken {
 export class AuthService {
   private decodedToken;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
 
     this.decodedToken = JSON.parse(localStorage.getItem('bwm_meta')) || new DecodedToken();
   }
@@ -64,5 +65,14 @@ export class AuthService {
 
   public getUserId(): string {
     return this.decodedToken.userId;
+  }
+
+  public isNotAuthenticated(header) {
+
+    if (header['Unauthorized']) {
+      this.logout();
+      this.router.navigate(['/login']);
+      return;
+    }
   }
 }

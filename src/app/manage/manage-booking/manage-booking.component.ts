@@ -3,6 +3,7 @@ import { BookingService } from '../../booking/shared/booking.service';
 import { PaymentService } from '../../payment/shared/payment.service';
 
 import { Booking } from '../../booking/shared/booking.model';
+import { AuthService } from '../../auth/shared/auth.service';
 
 @Component({
   selector: 'bwm-manage-booking',
@@ -15,16 +16,22 @@ export class ManageBookingComponent implements OnInit {
   payments: any[];
 
   constructor(private bookingService: BookingService,
-              private paymentService: PaymentService) { }
+            private paymentService: PaymentService,
+            private auth: AuthService) { }
 
   ngOnInit() {
     this.bookingService.getUserBookings().subscribe(
       (bookings: Booking[]) => {
         this.bookings = bookings;
       },
-      () => {
+      (err) => {
 
-      })
+        const header = [];
+        if (err.statusText) {
+          header[err.statusText] = true;
+          this.auth.isNotAuthenticated(header);
+        }
+      });
 
     this.getPendingPayments();
   }
@@ -36,7 +43,7 @@ export class ManageBookingComponent implements OnInit {
       },
       () => {
 
-      })
+      });
   }
 
   acceptPayment(payment) {
@@ -44,7 +51,7 @@ export class ManageBookingComponent implements OnInit {
       (json) => {
         payment.status = 'paid';
       },
-      err => {})
+      err => {});
   }
 
   declinePayment(payment) {
@@ -52,7 +59,7 @@ export class ManageBookingComponent implements OnInit {
       (json) => {
         payment.status = 'declined';
       },
-      err => {})
+      err => {});
   }
 
 }

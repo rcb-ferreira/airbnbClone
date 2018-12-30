@@ -13,8 +13,10 @@ import { RentalService } from './rental.service';
 @Injectable()
 export class RentalGuard implements CanActivate {
 
-  constructor(private rentalService: RentalService,
-              private router: Router) {}
+  constructor(
+    private rentalService: RentalService,
+    private router: Router
+  ) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
 

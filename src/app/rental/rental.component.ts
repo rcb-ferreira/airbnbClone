@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-rental',
+  selector: 'bwm-rental',
   templateUrl: './rental.component.html',
   styleUrls: ['./rental.component.scss']
 })
