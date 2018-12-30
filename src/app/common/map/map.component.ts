@@ -10,17 +10,17 @@ import { Subject } from 'rxjs';
 })
 export class MapComponent implements OnInit, OnDestroy {
 
-	@Input() location: string;
+  @Input() location: string;
 
   @Input() locationSubject: Subject<any>;
 
-  isPositionError: boolean = false;
+  isPositionError = false;
 
-	lat: number;
+  lat: number;
   lng: number;
 
   constructor(private mapService: MapService,
-              private ref:ChangeDetectorRef) { }
+              private ref: ChangeDetectorRef) { }
 
   ngOnInit() {
     if (this.locationSubject) {
@@ -49,6 +49,6 @@ export class MapComponent implements OnInit, OnDestroy {
   }
 
   mapReadyHandler() {
-  	this.getLocation(this.location);
+    this.getLocation(this.location);
   }
 }

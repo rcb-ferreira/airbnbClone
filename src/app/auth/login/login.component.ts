@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   errors: any[] = [];
-  notifyMessage: string = '';
+  notifyMessage = '';
 
   constructor(private fb: FormBuilder,
               private auth: AuthService,
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       if (params['registered'] === 'success') {
         this.notifyMessage = 'You have been succesfuly registered, you can login now!';
       }
-    })
+    });
   }
 
   initForm() {
@@ -34,17 +34,16 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required,
                    Validators.pattern('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$')]],
       password: ['', Validators.required]
-    })
+    });
   }
 
   isInvalidForm(fieldName): boolean {
     return this.loginForm.controls[fieldName].invalid &&
-           (this.loginForm.controls[fieldName].dirty || this.loginForm.controls[fieldName].touched)
+           (this.loginForm.controls[fieldName].dirty || this.loginForm.controls[fieldName].touched);
   }
 
-
   isRequired(fieldName): boolean {
-    return this.loginForm.controls[fieldName].errors.required
+    return this.loginForm.controls[fieldName].errors.required;
   }
 
   login() {
@@ -54,6 +53,6 @@ export class LoginComponent implements OnInit {
       },
       (errorResponse) => {
         this.errors = errorResponse.error.errors;
-      })
+      });
   }
 }

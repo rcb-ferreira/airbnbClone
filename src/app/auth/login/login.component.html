@@ -31,6 +31,17 @@
                    class="form-control"
                    id="password"
                    formControlName="password">
+
+            <div *ngIf="isInvalidForm('password')" class="alert alert-danger">
+            
+              <div *ngIf="isRequired('password')">
+                Password is required.
+              </div>
+            
+              <div *ngIf="loginForm.controls['password'].errors.pattern">
+                Must be valid email format!
+              </div>
+            </div>
           </div>
           <button [disabled]="!loginForm.valid" type="submit" class="btn btn-bwm">Submit</button>
         </form>
