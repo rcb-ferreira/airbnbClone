@@ -29,6 +29,25 @@ exports.getUser = function(req, res) {
   }
 }
 
+exports.deleteUser = function(req, res) {
+  const requestedUserId = req.params.id;
+  const user = res.locals.user;
+
+  if (user.id === requestedUserId) {
+
+    user.remove(function (err) {
+      if (err) {
+        return res.status(422).send({ errors: normalizeErrors(err.errors) });
+      }
+
+      return res.json({ 'status': 'deleted' });
+    });
+
+  } else {
+    return res.status(422).send({ errors: [{ title: 'Unauthorized!', detail: 'Not Allowed!!!' }] });
+  }
+}
+
 exports.auth =  function(req, res) {
   const { email, password } = req.body;
 
