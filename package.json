@@ -9,7 +9,7 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run start --prefix server",
-    "start-dev": "ng serve",
+    "start-dev": "ng serve -o",
     "build": "ng build --prod",
     "heroku-postbuild": "npm run build",
     "test": "ng test",
