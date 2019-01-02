@@ -23,7 +23,7 @@ export class RentalSearchComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.city = params['city'];
       this.getRentals();
-    })
+    });
   }
 
   getRentals() {

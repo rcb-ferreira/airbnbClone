@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   errors: any[] = [];
   notifyMessage = '';
+  redirectUrl: string;
 
   constructor(private fb: FormBuilder,
               private auth: AuthService,
@@ -25,6 +26,10 @@ export class LoginComponent implements OnInit {
     this.route.params.subscribe((params) => {
       if (params['registered'] === 'success') {
         this.notifyMessage = 'You have been succesfuly registered, you can login now!';
+      }
+
+      if (params['redirect']) {
+        this.redirectUrl = params['url'];
       }
     });
   }
@@ -49,7 +54,12 @@ export class LoginComponent implements OnInit {
   login() {
     this.auth.login(this.loginForm.value).subscribe(
       (token) => {
-        this.router.navigate(['/rentals']);
+
+        if (this.redirectUrl) {
+          this.router.navigate([this.redirectUrl]);
+        } else {
+          this.router.navigate(['/rentals']);
+        }
       },
       (errorResponse) => {
         this.errors = errorResponse.error.errors;

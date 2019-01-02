@@ -71,7 +71,7 @@ export class AuthService {
 
     if (header['Unauthorized']) {
       this.logout();
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login', { redirect: true, url: '/manage/bookings' }]);
       return;
     }
   }

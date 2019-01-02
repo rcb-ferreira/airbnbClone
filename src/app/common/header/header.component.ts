@@ -4,9 +4,9 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: "bwm-header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"]
+  selector: 'bwm-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
 

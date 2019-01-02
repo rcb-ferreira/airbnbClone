@@ -20,7 +20,7 @@ export class RentalCreateComponent implements OnInit {
               private router: Router) { }
 
   handleImageChange() {
-    this.newRental.image = "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/13/image.jpeg";
+    this.newRental.image = 'https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/13/image.jpeg';
   }
 
   ngOnInit() {
@@ -43,7 +43,7 @@ export class RentalCreateComponent implements OnInit {
       },
       (errorResponse: HttpErrorResponse) => {
         this.errors = errorResponse.error.errors;
-      })
+      });
   }
 
 }

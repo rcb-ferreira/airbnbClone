@@ -21,8 +21,8 @@ export class PaymentComponent implements OnInit {
   cardExp: any;
   cardCvc: any;
 
-  isValidatingCard: boolean = false;
-  error: string = '';
+  isValidatingCard = false;
+  error = '';
   token: any;
 
   constructor() {
@@ -47,7 +47,7 @@ export class PaymentComponent implements OnInit {
     this.cardCvc.addEventListener('change', this.onChange);
   }
 
-  ngOnDestroy() {
+  OnDestroy() {
     this.cardNumber.removeEventListener('change', this.onChange);
     this.cardExp.removeEventListener('change', this.onChange);
     this.cardCvc.removeEventListener('change', this.onChange);
