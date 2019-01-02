@@ -19,8 +19,6 @@ mongoose.connect(config.DB_URI).then(() => {
   }
 });
 
-mongoose.set('useCreateIndex', true);
-
 const app = express();
 
 app.use(bodyParser.json());
