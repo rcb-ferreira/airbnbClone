@@ -29,14 +29,14 @@ app.use('/api/v1/payments', paymentRoutes);
 app.use('/api/v1', imageUploadRoutes);
 
 
-// if (process.env.NODE_ENV === 'production') {
-// }
-const appPath = path.join(__dirname, '..', 'dist');
-app.use(express.static(appPath));
+if (process.env.NODE_ENV === 'production') {
+  const appPath = path.join(__dirname, '..', 'dist');
+  app.use(express.static(appPath));
 
-app.get('*', function(req, res) {
-  res.sendFile(path.resolve(appPath, 'index.html'));
-});
+  app.get('*', function(req, res) {
+    res.sendFile(path.resolve(appPath, 'index.html'));
+  });
+}
 
 const PORT = process.env.PORT || 3001;
 
