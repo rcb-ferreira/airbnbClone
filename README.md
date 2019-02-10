@@ -1,27 +1,26 @@
-# AngularStarter
+# Tech Stack
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+## Back end 
+    - Mongolab (hosting of my mongodb instance)
+    - Node (express server for API)
+    - Heroku to host Angular build files and Node api
+    
+## Front end
+    - Angular (can be build in vue or react)
+    - Map (google map intergration)
+    - Payment [stripe](https://stripe.com/payments/elements)
+    - Styling, just to get quick prototype up and runing [bootstrap](https://getbootstrap.com/)
+    
+## Code
+    - versioning [github](https://github.com/rcb-ferreira/initialngproject)
+    - IDE (visuall code)(https://code.visualstudio.com/)
+    - Typescript
+    - Nodejs 
+    - HTML
+    - CSS
+    
+## Todo 
+    - Convert to progressive web app (Add to desktop from any browser that supports PWA)
+    
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
