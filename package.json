@@ -32,7 +32,7 @@
     "@ng-bootstrap/ng-bootstrap": "^4.0.0",
     "@types/jquery": "^3.2.12",
     "angular-font-awesome": "^3.1.2",
-    "aws-sdk": "^2.275.1",
+    "aws-sdk": "^2.814.0",
     "bcrypt": "^2.0.0",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.1.0",
